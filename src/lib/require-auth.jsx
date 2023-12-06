@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { AuthContext } from ".auth-context";
+import { AuthContext } from "./context/auth-context";
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 
@@ -11,9 +11,7 @@ function RequireAuth({
 	const { currentUser } = useContext(AuthContext);
 	const location = useLocation();
 
-	if (!currentUser && reload) {
-		return children;
-	}
+	
 
 	if (!currentUser) {
 		return (
