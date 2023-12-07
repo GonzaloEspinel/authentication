@@ -6,6 +6,8 @@ import { PrivateRoot } from './PrivateRoot.jsx';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './lib/context/auth-context.jsx';
 import RequireAuth from './lib/require-auth.jsx';
+import Login from './login.jsx';
+
 
 // eslint-disable-next-line no-unused-vars
 const withAuthProvider = (Component, requireAuth = false,) => {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
     element: <PrivateRoot />, 
     // to make it private
     // element: withAuthProvider(PrivateApp,true),
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
