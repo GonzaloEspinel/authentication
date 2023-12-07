@@ -28,7 +28,9 @@ const router = createBrowserRouter([
   },
   {
     path: "/private",
-    element: <PrivateRoot />,
+    element: <PrivateRoot />, 
+    // to make it private
+    // element: withAuthProvider(PrivateApp,true),
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
